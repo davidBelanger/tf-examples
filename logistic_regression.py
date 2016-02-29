@@ -29,6 +29,7 @@ class regression_problem():
     def predict_probability(self,data,weights):
         return tf.sigmoid(self.predict_logit(data,weights))
 
+    #this draws data from the conditional probability model
     def generate(self,data,weights):
         stdev = 0.1
         predicted = self.predict_probability(data,weights)

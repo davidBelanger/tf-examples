@@ -18,12 +18,12 @@ def main():
   batches_per_epoch = 5
   num_test_set_batches = 25
 
-  label_files = ['file0.labels.csv']
-  features_files = ['file0.feats.csv']
+  label_files = ['data/file0.labels.csv']
+  features_files = ['data/file0.feats.csv']
   train_feats, train_labels = gen_batcher(features_files,features_dimension,label_files,label_dimension,batch_size=batch_size, shuffle=True)
 
-  test_label_files = ['file1.labels.csv']
-  test_features_files = ['file1.feats.csv']
+  test_label_files = ['data/file1.labels.csv']
+  test_features_files = ['data/file1.feats.csv']
   test_feats, test_labels = gen_batcher(test_features_files,features_dimension,test_label_files,label_dimension,batch_size=batch_size,shuffle=False)
 
   def make_model(input_features):

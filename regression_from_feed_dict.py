@@ -15,13 +15,13 @@ def main():
   batches_per_epoch = 2
   test_batch_size = 32
 
-  label_files = ['file0.labels.csv']
-  features_files = ['file0.feats.csv']
+  label_files = ['data/file0.labels.csv']
+  features_files = ['data/file0.feats.csv']
   train_feats, train_labels = gen_batcher(features_files,features_dimension,label_files,label_dimension,batch_size=batch_size, shuffle=True)
 
   #change this into a python loader?
-  test_features_data = np.loadtxt('file1.feats.csv',delimiter=',')
-  test_labels_data   = np.loadtxt('file1.labels.csv',delimiter=',')
+  test_features_data = np.loadtxt('data/file1.feats.csv',delimiter=',')
+  test_labels_data   = np.loadtxt('data/file1.labels.csv',delimiter=',')
   test_feats  = MinibatchIterator(test_features_data,test_batch_size)
   test_labels = MinibatchIterator(test_labels_data,test_batch_size)
 
